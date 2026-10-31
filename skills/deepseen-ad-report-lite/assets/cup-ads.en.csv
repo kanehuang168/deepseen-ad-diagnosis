@@ -1,0 +1,4 @@
+creative_id,product_id,account_id,period,currency,market,attribution_window,click_scope,spend,impressions,clicks,orders,click_attributed_orders,ad_revenue
+Fictional-Cup-A,DEMO-CUP-001,Fictional-account,2026-10-01/2026-10-07,USD,US,Fictional-7d-click-1d-view,Destination,120,10000,200,10,8,360
+Fictional-Cup-B,DEMO-CUP-001,Fictional-account,2026-10-01/2026-10-07,USD,US,Fictional-7d-click-1d-view,Destination,180,15000,150,3,2,90
+Fictional-Cup-C,DEMO-CUP-001,Fictional-account,2026-10-01/2026-10-07,USD,US,Fictional-7d-click-1d-view,Destination,60,5000,100,0,0,0

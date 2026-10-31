@@ -15,7 +15,7 @@ import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
-VERSION = '1.3.0'
+VERSION = '1.3.1'
 MAX_ROWS = 5000
 MONEY = ('spend', 'revenue')
 COUNTS = ('impressions', 'clicks', 'orders', 'click_orders')
@@ -323,11 +323,13 @@ def positive(text):
             raise InvalidOperation
         return value
     except InvalidOperation:
-        raise argparse.ArgumentTypeError('目标必须是大于0的有限数值。')
+        english = '--lang=en' in sys.argv or any(x == '--lang' and i+1 < len(sys.argv) and sys.argv[i+1] == 'en' for i,x in enumerate(sys.argv))
+        raise argparse.ArgumentTypeError('The target must be finite and greater than zero.' if english else '目标必须是大于0的有限数值。')
 
 
 def main():
-    parser = argparse.ArgumentParser(description='本地广告报表基础诊断，不联网、不调用付费接口。')
+    parser = argparse.ArgumentParser(description='Local ad-report analysis / 本地投流诊断; no network or paid calls.')
+    parser.add_argument('--lang', choices=['zh-CN','en'], default='zh-CN')
     parser.add_argument('input', type=Path)
     parser.add_argument('--sheet')
     parser.add_argument('--target-roas', type=positive)
@@ -348,7 +350,15 @@ def main():
         table, sheet = load_table(args.input, args.sheet)
         report = analyze(table, sheet, args.target_roas, args.target_cpa, args.revenue_scope)
         report['data_kind'] = '虚构示例' if args.demo else '用户提供数据'
-        markdown = render(report)
+        if args.lang == 'en':
+            import importlib.util
+            spec = importlib.util.spec_from_file_location('report_en', Path(__file__).with_name('report_en.py'))
+            presentation = importlib.util.module_from_spec(spec); spec.loader.exec_module(presentation)
+            render_en, localized_report = presentation.render, presentation.localized_report
+            markdown = render_en(report, safe)
+            report = localized_report(report)
+        else:
+            markdown = render(report)
         if args.output:
             args.output.write_text(markdown, encoding='utf-8')
         if args.json_output:
@@ -356,7 +366,14 @@ def main():
         print(markdown)
         return 0
     except (ValueError, OSError, csv.Error, KeyError, IndexError, zipfile.BadZipFile, ET.ParseError, UnicodeError) as error:
-        print('未完成分析：' + str(error), file=sys.stderr)
+        if args.lang == 'en':
+            import importlib.util
+            spec = importlib.util.spec_from_file_location('report_en', Path(__file__).with_name('report_en.py'))
+            presentation = importlib.util.module_from_spec(spec); spec.loader.exec_module(presentation)
+            diagnostic = presentation.diagnostic
+            print('Analysis incomplete: ' + diagnostic(str(error)), file=sys.stderr)
+        else:
+            print('未完成分析：' + str(error), file=sys.stderr)
         return 2
 
 

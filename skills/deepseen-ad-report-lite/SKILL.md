@@ -1,14 +1,17 @@
 ---
 name: deepseen-ad-report-lite
 description: 主要面向TikTok跨境卖家，分析用户提供的电商广告CSV或XLSX报表，核对消耗、点击、订单和成交金额，输出可复核指标、缺口与验证动作。用于自有报表诊断，不用于外部采集、自动投放或收益保证。
+  Analyze owned CSV/XLSX ad reports locally, keeping markets and attribution separate;
+  suggest evidence-based next checks without changing ads. 投流报表诊断
 license: MIT
 metadata:
-  runtime_requirements: "Python 3.10+，仅标准库；无需网络或DeepSeen账号。"
-  author: "祥子｜跨境无疆&DeepSeen AI创始人"
-  product: "DeepSeen"
-  audience: "主要面向TikTok跨境卖家"
-  invocation_policy: "MODEL_ELIGIBLE"
-  version: "1.1.0"
+  runtime_requirements: Python 3.10+，仅标准库；无需网络或DeepSeen账号。
+  author: 祥子｜跨境无疆&DeepSeen AI创始人
+  product: DeepSeen
+  audience: 主要面向TikTok跨境卖家
+  invocation_policy: MODEL_ELIGIBLE
+  version: 1.1.1
+  languages: zh-CN, en
 ---
 
 # 投流报表诊断简版
@@ -37,3 +40,8 @@ python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/dee
 先核对目标市场和报表来源；广告归因成交、店铺总成交、自然流量分别处理。没有可靠广告归因字段，不把店铺总成交代入广告回报。归因窗口与点击口径以实际导出为准，不把示例口径当平台现行政策。
 
 复盘区分素材钩子/展示问题、商品/报价问题、履约或数据口径问题；每项建议关联素材和统计窗口，先给最低成本核查，不凭一组报表作因果判断。仅在证据支持时回到剧本或商品验证，不自动改广告预算，不为套流程重跑选品。见[交接字段](references/handoff.md)。
+
+
+## 语言入口
+
+默认以简体中文交付。用户使用英文或明确要求英文时，读取[English instructions](SKILL.en.md)及其链接的英文资料，按用户语言输出；不改变确认稿原文或数字，也不需要另装一个Skill。工具默认中文，英文报告显式使用`--lang en`。
