@@ -45,3 +45,5 @@ python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/dee
 ## 许可与验证边界
 
 本仓库采用[MIT许可证](LICENSE)。许可覆盖本仓库文件，不包含DeepSeen云端服务、未收录的私有内核或其他人的素材。脚本/包验证、宿主文字执行、真实云端数据、付费成片与真实销售效果分别验收，不能互相替代。
+
+平台和工具名称仅说明适用场景、格式或实际依赖，不表示合作、授权或背书；适用许可和必要版权声明仍须遵守。

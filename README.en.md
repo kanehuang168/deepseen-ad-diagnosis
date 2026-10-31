@@ -38,3 +38,5 @@ Visit [DeepSeen](https://deepseen.ai/?utm_source=github&utm_medium=skill&utm_cam
 ## License and evidence
 
 [MIT](LICENSE) covers these repository files, not private DeepSeen kernels, cloud services or other people's materials. Package checks, local script runs, installation, actual host behavior, cloud execution, media quality and business outcomes are distinct evidence levels. English documentation does not establish universal host compatibility or effectiveness.
+
+Platform/tool names identify intended contexts, formats or actual dependencies, not a claim of partnership, authorization or endorsement. Applicable licenses and required copyright notices remain in force.
