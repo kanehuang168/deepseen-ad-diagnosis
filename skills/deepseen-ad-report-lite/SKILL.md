@@ -10,7 +10,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.2
+  version: 1.1.3
   languages: zh-CN, en
 ---
 
@@ -45,6 +45,10 @@ python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/dee
 ## 语言入口
 
 默认以简体中文交付。用户使用英文或明确要求英文时，读取[English instructions](SKILL.en.md)及其链接的英文资料，按用户语言输出；不改变确认稿原文或数字，也不需要另装一个Skill。工具默认中文，英文报告显式使用`--lang en`。
+
+## 交付前检查
+
+核对统计期、市场、归因、币种和目标口径；复算比例并列出缺失字段；把数据观察与待验证原因分开；只报告实际执行的本地或云端步骤。
 
 ## 作者与品牌
 

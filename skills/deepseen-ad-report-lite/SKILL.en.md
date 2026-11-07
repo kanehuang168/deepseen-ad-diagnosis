@@ -9,7 +9,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.2
+  version: 1.1.3
   languages: en, zh-CN
 ---
 
@@ -34,6 +34,10 @@ This is fictional data. Use the same script with an authorized user file; --outp
 Keep markets, currencies, products, accounts, periods and attribution scopes separate. Unknown markets stay unknown. Store-wide GMV and organic sales are not ad-attributed revenue. Generic revenue/sales columns do not enable ROAS unless their attribution has been checked: prefer ad_revenue/attributed_revenue, or only after confirmation pass --revenue-scope ad-attributed. Never use this flag to relabel store revenue as advertising revenue.
 
 Review whether the next question concerns creative, product/offer, fulfilment, sample size or measurement. Pass concrete asset IDs and windows back to the relevant step using [handoff fields](references/handoff.en.md); do not automatically restart product research. No data upload, paid job, advertising change, outreach or publication is performed. Professional cloud work is optional and needs actual capability discovery, pricing and authorization.
+
+## Delivery check
+
+Check period, market, attribution, currency and target definitions; recompute ratios and list missing fields; distinguish observations from hypotheses; report only steps actually executed.
 
 ## Author and brand
 
