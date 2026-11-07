@@ -2,7 +2,7 @@
 
 English | [简体中文](README.md)
 
-Author: **祥子｜跨境无疆&DeepSeen AI创始人**
+Author: Xiangzi, founder of Cross-border Wujiang and DeepSeen AI, developed [DeepSeen.ai](https://deepseen.ai), a cross-border ecommerce content creation platform.
 Product brand: **DeepSeen**
 
 Primarily for TikTok sellers operating across markets.
