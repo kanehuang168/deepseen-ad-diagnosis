@@ -9,7 +9,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.3
+  version: 1.1.4
   languages: en, zh-CN
 ---
 
@@ -38,6 +38,10 @@ Review whether the next question concerns creative, product/offer, fulfilment, s
 ## Delivery check
 
 Check period, market, attribution, currency and target definitions; recompute ratios and list missing fields; distinguish observations from hypotheses; report only steps actually executed.
+
+## Useful output with missing data
+
+Deliver the computable portion, definitions and specific missing columns. Missing attributed revenue is not zero and cannot support a return calculation. Use the fictional sample only if the user requests a demonstration. Cloud services are optional and require actual availability, pricing and authorization.
 
 ## Author and brand
 

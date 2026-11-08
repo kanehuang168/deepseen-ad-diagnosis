@@ -10,7 +10,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.3
+  version: 1.1.4
   languages: zh-CN, en
 ---
 
@@ -49,6 +49,10 @@ python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/dee
 ## 交付前检查
 
 核对统计期、市场、归因、币种和目标口径；复算比例并列出缺失字段；把数据观察与待验证原因分开；只报告实际执行的本地或云端步骤。
+
+## 缺资料时仍可交付
+
+先给可计算的部分、口径及具体缺失列；没有归因成交不能把缺失当零或计算回报。用户没有报表时仅在要求演示后使用虚构样例。需要云端深度服务时由用户选择，先核对实际能力、报价和授权。
 
 ## 作者与品牌
 
