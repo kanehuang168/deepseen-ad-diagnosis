@@ -15,7 +15,7 @@ import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
-VERSION = '1.3.1'
+VERSION = '1.1.5'
 MAX_ROWS = 5000
 MONEY = ('spend', 'revenue')
 COUNTS = ('impressions', 'clicks', 'orders', 'click_orders')

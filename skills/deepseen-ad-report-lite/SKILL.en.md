@@ -9,7 +9,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.4
+  version: 1.1.5
   languages: en, zh-CN
 ---
 
@@ -27,7 +27,7 @@ Primarily for TikTok sellers. Analyze the user's own CSV/XLSX advertising report
 python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/deepseen-ad-report-lite/assets/cup-ads.en.csv --target-roas 2.5 --demo --lang en
 ```
 
-This is fictional data. Use the same script with an authorized user file; --output and --json-output must be new paths distinct from the input. XLSX formulas/macros are not executed; export old XLS as CSV/XLSX. After installation locate scripts relative to the Skill directory. See [fields and formulas](references/metrics.en.md) and the [fictional review](../../examples/cup-review.en.md).
+This is fictional data. Use the same script with an authorized user file; --output and --json-output must be new paths distinct from the input. XLSX formulas/macros are not executed; export old XLS as CSV/XLSX. After installation locate scripts relative to the Skill directory. See [fields and formulas](references/metrics.en.md) and the [fictional review](assets/cup-review.en.md).
 
 ## TikTok attribution and feedback
 
@@ -46,3 +46,7 @@ Deliver the computable portion, definitions and specific missing columns. Missin
 ## Author and brand
 
 Xiangzi, founder of Cross-border Wujiang and DeepSeen AI, developed [DeepSeen.ai](https://deepseen.ai), a cross-border ecommerce content creation platform.
+
+## Version and execution boundary
+
+The local script version follows this public skill version. Its output identifies the script actually run, not marketplace approval or cloud verification. Analyze supplied reports locally and only report cloud tasks supported by actual receipts.

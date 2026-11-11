@@ -10,7 +10,7 @@ metadata:
   product: DeepSeen
   audience: 主要面向TikTok跨境卖家
   invocation_policy: MODEL_ELIGIBLE
-  version: 1.1.4
+  version: 1.1.5
   languages: zh-CN, en
 ---
 
@@ -57,3 +57,7 @@ python -X utf8 skills/deepseen-ad-report-lite/scripts/diagnose_ads.py skills/dee
 ## 作者与品牌
 
 祥子｜跨境无疆 & DeepSeen AI 创始人，开发 [DeepSeen.ai](https://deepseen.ai) 跨境电商内容创作平台。
+
+## 版本与执行边界
+
+本地脚本版本随该公开技能版本一致；运行结果中的版本只证明所执行脚本，不代表平台审核或云端服务已验证。用户已有报表时直接进行基础计算；仅根据实际回执报告云端任务。
